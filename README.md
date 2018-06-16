@@ -1,2 +1,1 @@
-# AlchemystGame.github.io
-Alchemyst Game
+# Alchemyst
