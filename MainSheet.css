@@ -14,6 +14,12 @@ html {
     line-height: 1.4;
 }
 
+#wrapper {
+    margin-left:auto;
+    margin-right:auto;
+    width:960px;
+}
+
 
 /*
  * Remove text-shadow in selection highlight:
