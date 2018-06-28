@@ -18,12 +18,11 @@
 			<li><input type="button" class="utilButton" value="LoadSave" onClick="loadSave()"/></li>
 		</ul>
 		<div id="Main" class="yo">
-			<p class ="test"> Hey </p>
 			<div id="GatherButtons">
 				<div><button onClick="resourceClick('Stone')"  class="StoneC resourceButton">Gather Stone <div>Stone: <span class="Stone">0</span></div></button></div>
 			</div>
 			<div>
-				<ul id="ResourceTable">
+				<ul class="ResourceTable">
 				</ul>
 			</div>
 			<div>
@@ -40,6 +39,10 @@
 				<div><button onClick="homunculusClick('Stone')"  class="StoneC tooltip resourceButton">Create Stone Homunculus <div>Stone Homunculi: <span class="StoneHom">0</span></div><div class = "tooltiptext">Cost:<span class="StoneCost">15</span><div>Gathers stone and fights for you!</div><div><i>'Has a heart of stone'</i></div></button></div></div>
 			</div>
 			<input type="button" class="Philo" onClick="resourceClick('Essence');unhide('Transmutation');"/><span class = "PhiloText noselect">Philosopher's Stone<div class="EssenceC"> Essence: <span class="Essence">0</span> </div></span></span></button>
+			<div>
+				<ul class="ResourceTable">
+				</ul>
+			</div>
 		</div>
 
 	</div>

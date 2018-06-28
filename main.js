@@ -25,12 +25,10 @@ document.getElementById("test").innerHTML = Alchemy.Resources.Stone.amount;
 
 
 var panes = ["Main","Transmutation"];
-var Click = 10000
+var Click = 1234567;
 function resourceClick(resource){
-    Resources[resource]["amount"] = Resources[resource]["amount"].add(Click);
-	if(($("#ResourceTable").has("."+resource+"C")).length==0) {
-		$("#ResourceTable").append("<li class="+resource+"C>"+resource+": <span class="+resource+"></span></li>");
-	};
+    updateResourceTable(resource);
+    Resources[resource]["amount"] = Resources[resource]["amount"]+(Click);
 	if(Resources[resource]["isScientific"]==false) {
 		$("."+ resource).text(suffixfy(Resources[resource]["amount"],3));
 		if(getSuffix(Resources[resource]["amount"],4)>19) {

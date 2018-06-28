@@ -11,6 +11,7 @@ function update() {
 	//cursorClick(cursors-1);
 	updateIsDiscovered();
 	updateResources();
+	updateResourceTable();
 	//console.log(Resources.Gold.isDiscovered)
 };
 
@@ -19,12 +20,8 @@ function update() {
 function updateIsDiscovered() {
 	for (var property in Resources) {
 		if (Resources.hasOwnProperty(property)) {
-
 			if(Resources[property].hasOwnProperty("isDiscovered")) {
-
-
 				if(Resources[Resources[property]["required"]["resource"]]["amount"]>Resources[property]["required"]["amnt"]) {
-
 					Resources[property]["isDiscovered"]=true;
 					var prop = "'"+property+"'"
 					if((($("#GatherButtons").has("."+property+"C")).length==0)) {
