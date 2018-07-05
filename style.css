@@ -116,7 +116,8 @@ textarea {
 }
 
 body{
-    background: #000;
+    background-image: url("EmptyStarfield.jpg");
+    background-color: #000;
     font-family: Kings;
     font-size:16px;
     color:#fff;
@@ -219,7 +220,8 @@ input:focus {
 	margin-top: 0px;
 	margin-left: 0px;
     top: 10%;
-    left: 29%;
+    left: 50%;
+    margin-left: -88px;
 	z-index: 90000;
     pointer-events:none;
 
