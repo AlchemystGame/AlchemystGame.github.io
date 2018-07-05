@@ -1,34 +1,10 @@
-/*var game = {
-	Clicks: 1,
 
-	Resources: {
-		Stone: {
-			name: "Stone",
-			desc: "The starting building block for all of Alchemy",
-			amount = 10,
-			color: 	"#8B8D7A"
-		}
-	},
-
-	cursorClick: function(number) {
-		Resources.Stone.amount = Resources.Stone.amount + Clicks;
-		document.getElementById("stones").innerHTML = Resources.Stone.amount;
-			if(stone>40){
-				document.getElementById("test").innerHTML = Resources.Stone.amount;
-			};
-	}
-};
-
-var Alchemy = new game();
-document.getElementById("test").innerHTML = Alchemy.Resources.Stone.amount;
-*/
-
-
-var panes = ["Main","Transmutation"];
-var Click = 1234567;
+var panes = ["Main", "Transmutation","Ages"];
+var Click = 100000;
 function resourceClick(resource){
     updateResourceTable(resource);
     Resources[resource]["amount"] = Resources[resource]["amount"]+(Click);
+    Ages[0].totalEssence+=Click;
 	if(Resources[resource]["isScientific"]==false) {
 		$("."+ resource).text(suffixfy(Resources[resource]["amount"],3));
 		if(getSuffix(Resources[resource]["amount"],4)>19) {
@@ -74,7 +50,6 @@ function suffixfy(num, dec){
 		suffix = suffixes[ord+1];
 		rounded = rounded/1000
 	};
-	console.log(rounded)
     return rounded+suffix;
 
 }
@@ -113,8 +88,22 @@ function loadSave() {
 	Resources = JSON.parse(saveResources);
 };
 
+var tick = 10;
+var lastUpdate = Date.now();
+var now;
+var deltaTime;
+var tickCount = 0;
 
-var white = 66;
-window.setInterval(function(){
-	update();
-	}, 300);
+function gameLoop() {
+        now = Date.now();
+        deltaTime = now - lastUpdate;
+    lastUpdate = now;
+
+        tickCount++;
+
+    update();
+
+    setTimeout(gameLoop, 1000/tick);
+}
+
+gameLoop();

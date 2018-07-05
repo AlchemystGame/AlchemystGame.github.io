@@ -55,6 +55,3 @@ function updateResourceTable() {
     	}
 	})
 };
-
-
-//if Resources.Stone.amount>Resources.Gold.required.amnt)

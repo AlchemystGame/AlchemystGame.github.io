@@ -1,6 +1,6 @@
+var white = 66;
+
 function update() {
-//console.log(white)
-	//Resources.Stone.amount = Resources.Stone.amount.times('1e+2000000');
 	$(".Philo").css({
 	"background": "-webkit-radial-gradient(white "+white+"%, red)",
 	"background": "-o-radial-gradient(white "+white+"%, red)",
@@ -8,14 +8,15 @@ function update() {
 	"background": "radial-gradient(white "+white+"%, red)"
 	});
 	white = white-1;
-	//cursorClick(cursors-1);
+
+	Resources.Essence.amount+=Click*deltaTime/1000;
 	updateIsDiscovered();
 	updateResources();
 	updateResourceTable();
-	//console.log(Resources.Gold.isDiscovered)
+	updateAgeList();
+	updateAges();
 };
 
-//if Resources.Stone.amount>Resources.Gold.required.amnt)
 
 function updateIsDiscovered() {
 	for (var property in Resources) {
