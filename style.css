@@ -251,7 +251,6 @@ input:focus {
 #Main {
     position: absolute;
     margin: auto;
-    border:4px solid #663399;
 }
 
 #GatherButtons {

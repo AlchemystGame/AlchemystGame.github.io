@@ -10,6 +10,10 @@ function update() {
 	white = white-1;
 
 	Resources.Essence.amount+=Click*deltaTime/1000;
+	let AgeIncome = totalAgeIncome();
+
+
+
 	updateIsDiscovered();
 	updateResources();
 	updateResourceTable();
@@ -55,3 +59,38 @@ function updateResources() {
 		};
 	};
 };
+
+function updateResourceTable() {
+	$(".ResourceTable").each(function(v,f) {
+		for (var resource in Resources) {
+    		if (Resources.hasOwnProperty(resource)) {
+				if(($(f).has("."+resource+"C").length==0)) {
+		    		$(f).append("<li class="+resource+"C>"+resource+": <span class="+resource+"></span></li>");
+    			}
+			}
+    	}
+	})
+};
+
+function updateAgeList() {
+    $("#AgeList").each(function(v,f) {
+		for (age in Ages) {
+            var currentAge = Ages[age];
+    		if (currentAge.hasOwnProperty("id")) {
+				if(($(f).has("#"+currentAge.id).length==0)) {
+		    		$(f).append("<li id="+currentAge.id+">"+currentAge.name+": <span class="+currentAge.id+">"+currentAge.totalEssence+"</span></li>");
+    			}
+			}
+    	}
+	})
+};
+
+function updateAges() {
+    for(age in Ages) {
+        $("#AgeList li").each(function(v,f){
+            if(Ages[age].id==f.id) {
+                $("."+Ages[age].id).text(suffixfy(Ages[age].totalEssence,3));
+            }
+        })
+    }
+}

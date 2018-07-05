@@ -30,6 +30,15 @@ Resources = {
 	}
 };
 
+var Essence1 = {
+		Alpha: {
+			tier: 1,
+			amount: 0,
+			color: '#08e8de',
+			isDiscovered: true,
+		}
+};
+
 var Homunculi = {
 	StoneHom:{
 		name: 'Stone Homunculus',
@@ -42,16 +51,4 @@ var Homunculi = {
 			Stone: 20
 			}
 		}
-};
-
-function updateResourceTable() {
-	$(".ResourceTable").each(function(v,f) {
-		for (var resource in Resources) {
-    		if (Resources.hasOwnProperty(resource)) {
-				if(($(f).has("."+resource+"C").length==0)) {
-		    		$(f).append("<li class="+resource+"C>"+resource+": <span class="+resource+"></span></li>");
-    			}
-			}
-    	}
-	})
 };
