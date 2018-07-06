@@ -2,10 +2,10 @@ var white = 66;
 
 function update() {
 	$(".Philo").css({
-	"background": "-webkit-radial-gradient(white "+white+"%, red)",
-	"background": "-o-radial-gradient(white "+white+"%, red)",
-	"background": "-moz-radial-gradient(white "+white+"%, red)",
-	"background": "radial-gradient(white "+white+"%, red)"
+	"background": "-webkit-radial-gradient(white "+white+"%, rgba(8,232,222))",
+	"background": "-o-radial-gradient(white "+white+"%, rgba(8,232,222))",
+	"background": "-moz-radial-gradient(white "+white+"%, rgba(8,232,222))",
+	"background": "radial-gradient(white "+white+"%, rgba(8,232,222))"
 	});
 	white = white-1;
 

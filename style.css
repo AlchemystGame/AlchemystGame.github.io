@@ -186,14 +186,14 @@ input:focus {
 }
 
 .EssenceC {
-	color: #08e8de;
+	color: #06B9B1;
 }
 
 .Philo {
-	background: -webkit-radial-gradient(white 66%, red);
-	background: -o-radial-gradient(white 66%, red);
-	background: -moz-radial-gradient(white 66%, red);
-	background: radial-gradient(white 66%, red);
+	background: -webkit-radial-gradient(white 66%, rgba(8,232,222));
+	background: -o-radial-gradient(white 66%, rgba(8,232,222));
+	background: -moz-radial-gradient(white 66%, rgba(8,232,222));
+	background: radial-gradient(white 66%, rgba(8,232,222));
 	width: 400px;
     height: 400px;
     -webkit-border-radius: 100%;
@@ -207,6 +207,7 @@ input:focus {
 	border:4px solid red;
 	outline: none;
     cursor:pointer;
+
 }
 .Philo:hover {
 	border:4px solid #FF7F7F;
@@ -215,6 +216,8 @@ input:focus {
 .PhiloText {
 	font-size: 24px;
 	color:  #663399;
+    -webkit-border-radius: 20%;
+    -moz-border-radius: 20%;
 	text-align: center;
 	position: absolute;
 	margin-top: 0px;
@@ -227,15 +230,29 @@ input:focus {
 
 }
 
+#messageLog {
+    width: 550px;
+    height: 280px;
+    padding: 20px;
+    background-color: rgba(124,124,124,.4);
+    position: absolute;
+    overflow-y: auto;
+    list-style: none;
+    left:50%;
+    margin-left: -275px;
+    border: 2px solid #888;
+}
+
 
 .ResourceTable {
     text-align: left;
     border:2px solid #888;
 	background: #444;
 	list-style-type: none;
-    width: 120px;
+    width: 130px;
     padding:0;
-    margin-left: 300px;
+    position: absolute;
+    right: 0;
 }
 
 #HomunculusTable {
@@ -262,6 +279,10 @@ input:focus {
     position:absolute;
 }
 
+#GatherButtons:hover {
+    background: #666;
+}
+
 .resourceButton {
 	background: #444;
     border:2px solid #888;
@@ -284,8 +305,11 @@ input:focus {
 	width: 120px;
 }
 
+.utilButton:hover {
+    background: #666;
+}
+
 #navbar {
-    border-width:1px 0;
     list-style:none;
     margin:0;
     padding:0;

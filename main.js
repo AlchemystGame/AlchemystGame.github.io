@@ -1,8 +1,12 @@
 
 var panes = ["Main", "Transmutation","Ages"];
 var Click = 100000;
+
+//Click to gather various resources, need to update
+
 function resourceClick(resource){
     updateResourceTable(resource);
+    addMessage("Adding " + Click + " " + resource);
     Resources[resource]["amount"] = Resources[resource]["amount"]+(Click);
     Ages[0].totalEssence+=Click;
 	if(Resources[resource]["isScientific"]==false) {
@@ -15,6 +19,8 @@ function resourceClick(resource){
 		$("."+ resource).text((Resources[resource]["amount"].toExponential(5)));
 	};
 };
+
+//Useless, need to remove
 
 function homunculusCost(homunculus) {
 	var c = Math.floor((Homunculi[homunculus+"Hom"]["cost"]) * Math.pow(1.07,(Homunculi[homunculus+"Hom"]["amount"]-1)));
@@ -36,9 +42,7 @@ function homunculusClick(homunculus){
 	};
 };
 
-function homBtnCreate() {
-
-};
+// Used to add suffix to all numbers
 
 function suffixfy(num, dec){
     dec = dec || 0; //how many decimal places do we want?
@@ -69,6 +73,7 @@ function floor(num){
     }
 }
 
+//Swich Between Panes
 
 function unhide(id) {
 	panes.forEach(function(item) {
@@ -77,6 +82,8 @@ function unhide(id) {
 		);
 	$('#'+id).attr("class","nothidden");
 };
+
+//Save Functionality
 
 function save() {
 	var save = JSON.stringify(Resources);
@@ -88,6 +95,7 @@ function loadSave() {
 	Resources = JSON.parse(saveResources);
 };
 
+ // Game Tick Loop
 var tick = 10;
 var lastUpdate = Date.now();
 var now;

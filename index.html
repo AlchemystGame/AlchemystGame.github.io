@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html class="noselect">
 	<head>
+		<title>Alchemyst</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="bignumber.js"></script>
 		<script type="text/javascript" src="Resources.js"></script>
         <script type="text/javascript" src="Ages.js"></script>
+		<script type="text/javascript" src="Log.js"></script>
 		<script type="text/javascript" src="update.js"></script>
 		<script type="text/javascript" src="main.js"></script>
 
@@ -20,6 +22,9 @@
             <li><input type="button" class="utilButton" value="Ages" onClick="unhide('Ages')"/></li>
 			<li><input type="button" class="utilButton" value="Save" onClick="save()"/></li>
 			<li><input type="button" class="utilButton" value="LoadSave" onClick="loadSave()"/></li>
+		</ul>
+
+		<ul id="messageLog">
 		</ul>
 
         <div class="Philo">
@@ -48,6 +53,13 @@
 			<p id="p1" hidden> Hey not im hidden</p>
 		</div>
 
+		<div id="Ages" class="hidden">
+
+            <ul id="AgeList">
+            </ul>
+
+        </div>
+
         <div id="Transmutation" class="hidden">
 
 			<div id="HomunculusButtons">
@@ -73,13 +85,6 @@
 			</div>
 
 		</div>
-
-        <div id="Ages" class="hidden">
-
-            <ul id="AgeList">
-            </ul>
-
-        </div>
 
     </div>
 
