@@ -83,18 +83,6 @@ function unhide(id) {
 	$('#'+id).attr("class","nothidden");
 };
 
-//Save Functionality
-
-function save() {
-	var save = JSON.stringify(Resources);
-	localStorage.setItem("save", save);
-};
-
-function loadSave() {
-	var saveResources = localStorage.getItem("save");
-	Resources = JSON.parse(saveResources);
-};
-
  // Game Tick Loop
 var tick = 10;
 var lastUpdate = Date.now();
@@ -102,11 +90,11 @@ var now;
 var deltaTime;
 var tickCount = 0;
 
+
 function gameLoop() {
         now = Date.now();
         deltaTime = now - lastUpdate;
-    lastUpdate = now;
-
+        lastUpdate = now;
         tickCount++;
 
     update();

@@ -232,7 +232,7 @@ input:focus {
 
 #messageLog {
     width: 550px;
-    height: 280px;
+    height: 260px;
     padding: 20px;
     background-color: rgba(124,124,124,.4);
     position: absolute;
@@ -240,9 +240,17 @@ input:focus {
     list-style: none;
     left:50%;
     margin-left: -275px;
+    margin-top: 20px;
     border: 2px solid #888;
 }
 
+#AgeList {
+    background-color: rgba(124,124,124,.4);
+    border: 2px solid #888;
+    list-style: none;
+    width: 300px;
+    height: 700px;
+}
 
 .ResourceTable {
     text-align: left;

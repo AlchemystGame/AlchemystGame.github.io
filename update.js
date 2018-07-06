@@ -1,4 +1,5 @@
 var white = 66;
+var totalTime = 0;
 
 function update() {
 	$(".Philo").css({
@@ -12,15 +13,37 @@ function update() {
 	Resources.Essence.amount+=Click*deltaTime/1000;
 	let AgeIncome = totalAgeIncome();
 
-
-
 	updateIsDiscovered();
 	updateResources();
 	updateResourceTable();
 	updateAgeList();
 	updateAges();
+
+	totalTime+=deltaTime;
+	if(totalTime>=60000*5) {
+		totalTime = 0;
+		save();
+		addMessage("Auto-saving...");
+	}
 };
 
+//Save Functionality
+
+function save() {
+	var saveResources = JSON.stringify(Resources);
+	localStorage.setItem("saveResources", saveResources);
+
+	var saveAges = JSON.stringify(Ages);
+	localStorage.setItem("saveAges", saveAges);
+};
+
+function loadSave() {
+	var saveResources = localStorage.getItem("saveResources");
+	Resources = JSON.parse(saveResources);
+
+	var saveAges = localStorage.getItem("saveAges");
+	Ages = JSON.parse(saveAges);
+};
 
 function updateIsDiscovered() {
 	for (var property in Resources) {
