@@ -21,7 +21,7 @@ html {
 }
 
 #wrapper {
-    max-width:1440px;
+    max-width:2560px;
     max-height:1200px;
     position: relative;
     margin: 0 auto;
@@ -244,12 +244,52 @@ input:focus {
     border: 2px solid #888;
 }
 
-#AgeList {
+/* Ages */
+
+#Ages {
     background-color: rgba(124,124,124,.4);
     border: 2px solid #888;
-    list-style: none;
     width: 300px;
     height: 700px;
+}
+
+#AgeList {
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+#ActiveAges {
+    width: auto;
+    height: 100px;
+    position: relative;
+    border-bottom: 2px solid #987;
+    text-align: center;
+    font-size:18px;
+}
+
+#PassiveAges {
+    text-align: center;
+    font-size:18px;
+}
+
+.ageButton {
+	background: #444;
+    border:2px solid #888;
+    border-radius: 2;
+    cursor:pointer;
+	padding: 10px;
+    margin: 5px;
+	font-family: Kings;
+	font-size:16px;
+	width: 0 auto;
+    display: table;
+}
+
+.ageButton:hover {
+    background: #666;
 }
 
 .ResourceTable {
@@ -262,6 +302,7 @@ input:focus {
     position: absolute;
     right: 0;
 }
+
 
 #HomunculusTable {
 	list-style-type: none;
@@ -311,6 +352,7 @@ input:focus {
 	font-family: Kings;
 	font-size:16px;
 	width: 120px;
+    color: white;
 }
 
 .utilButton:hover {

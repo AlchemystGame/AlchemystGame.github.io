@@ -96,16 +96,18 @@ function updateResourceTable() {
 };
 
 function updateAgeList() {
-    $("#AgeList").each(function(v,f) {
-		for (age in Ages) {
-            var currentAge = Ages[age];
-    		if (currentAge.hasOwnProperty("id")) {
-				if(($(f).has("#"+currentAge.id).length==0)) {
-		    		$(f).append("<li id="+currentAge.id+">"+currentAge.name+": <span class="+currentAge.id+">"+currentAge.totalEssence+"</span></li>");
-    			}
-			}
-    	}
-	})
+	if($("#Ages").has("#AgeList").length==1) {
+    	$("#AgeList").each(function(v,f) {
+			for (age in Ages) {
+            	var currentAge = Ages[age];
+    			if (currentAge.hasOwnProperty("id")) {
+					if(($(f).has("#"+currentAge.id).length==0)) {
+		    			$(f).append("<li class=ageButton onClick = resourceClick('Essence'),loadSelectedAge("+ currentAge.id +"); id="+currentAge.id+">"+currentAge.name+": <span class="+currentAge.id+">"+currentAge.totalEssence+"</span></li>");
+    				}
+				}
+    		}
+		})
+	}
 };
 
 function updateAges() {
