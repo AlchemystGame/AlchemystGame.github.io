@@ -96,8 +96,8 @@ function updateResourceTable() {
 };
 
 function updateAgeList() {
-	if($("#Ages").has("#AgeList").length==1) {
-    	$("#AgeList").each(function(v,f) {
+	if($("#Ages").has("#PassiveAgeList").length==1) {
+    	$("#PassiveAgeList").each(function(v,f) {
 			for (age in Ages) {
             	var currentAge = Ages[age];
     			if (currentAge.hasOwnProperty("id")) {
@@ -108,11 +108,12 @@ function updateAgeList() {
     		}
 		})
 	}
+
 };
 
 function updateAges() {
     for(age in Ages) {
-        $("#AgeList li").each(function(v,f){
+        $("#PassiveAgeList li").each(function(v,f){
             if(Ages[age].id==f.id) {
                 $("."+Ages[age].id).text(suffixfy(Ages[age].totalEssence,3));
             }

@@ -249,11 +249,12 @@ input:focus {
 #Ages {
     background-color: rgba(124,124,124,.4);
     border: 2px solid #888;
+    position: relative;
     width: 300px;
     height: 700px;
 }
 
-#AgeList {
+#PassiveAgeList {
     margin: 0;
     margin-top: 10px;
     margin-left: 10px;
@@ -273,6 +274,27 @@ input:focus {
 #PassiveAges {
     text-align: center;
     font-size:18px;
+}
+
+#currentAge {
+    list-style: none;
+}
+
+#currentAge li {
+    padding-top: 20px;
+}
+
+#AgeExit {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+#AgeActiveSelect {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 125px;
 }
 
 .ageButton {
