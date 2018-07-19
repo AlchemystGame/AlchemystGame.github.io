@@ -19,7 +19,7 @@
         <ul id="navbar">
 			<li><input type="button" class="utilButton" value="Main" onClick="unhide('Main')"/></li>
 			<li><input type="button" class="utilButton" value="Transmutation" onClick="unhide('Transmutation')"/></li>
-            <li><input type="button" class="utilButton" value="Ages" onClick="unhide('Ages')"/></li>
+            <li><input type="button" class="utilButton" value="Ages" onClick="unhide('Ages'), loadAgeList()"/></li>
 			<li><input type="button" class="utilButton" value="Save" onClick="save()"/></li>
 			<li><input type="button" class="utilButton" value="LoadSave" onClick="loadSave()"/></li>
 		</ul>
@@ -27,7 +27,7 @@
 		<ul id="messageLog">
 		</ul>
 
-        <div class="Philo">
+        <div class="PhiloWrapper">
             <input type="button" class="Philo" onClick="resourceClick('Essence');">
                 <span class = "PhiloText noselect">Philosopher's Stone
                     <div class="EssenceC"> Essence:
@@ -36,6 +36,8 @@
                     </div>
                 </span>
             </input>
+			<input type="button" value="180deg" class = "deg180"></input>
+			<input type="button" value="90deg" class = "deg90"></input>
         </div>
 
         <ul class="ResourceTable">
@@ -60,7 +62,7 @@
 				</ul>
 			</div>
 			<div id = "PassiveAges">
-				Passive Ages
+				<span> Passive Ages </span>
             	<ul id="PassiveAgeList">
             	</ul>
 			</div>

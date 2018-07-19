@@ -1,6 +1,6 @@
 var white = 66;
 var totalTime = 0;
-
+loadSave();
 function update() {
 	$(".Philo").css({
 	"background": "-webkit-radial-gradient(white "+white+"%, rgba(8,232,222))",
@@ -33,7 +33,7 @@ function save() {
 	var saveResources = JSON.stringify(Resources);
 	localStorage.setItem("saveResources", saveResources);
 
-	var saveAges = JSON.stringify(Ages);
+	var saveAges = JSON.stringify(ages);
 	localStorage.setItem("saveAges", saveAges);
 };
 
@@ -41,8 +41,8 @@ function loadSave() {
 	var saveResources = localStorage.getItem("saveResources");
 	Resources = JSON.parse(saveResources);
 
-	var saveAges = localStorage.getItem("saveAges");
-	Ages = JSON.parse(saveAges);
+	//var saveAges = localStorage.getItem("saveAges");
+	//ages = JSON.parse(saveAges);
 };
 
 function updateIsDiscovered() {
@@ -96,13 +96,23 @@ function updateResourceTable() {
 };
 
 function updateAgeList() {
+	if($("#Ages").has("#ActiveAgeList").length==1) {
+		for(age in ages) {
+			if(ages[age].isActive) {
+				if($("#ActiveAgeList").has("#"+ages[age].id).length==0) {
+					$("#ActiveAgeList").append("<li class=ageButton onClick = resourceClick('Essence'),loadSelectedAge("+ ages[age].id +"); id="+ages[age].id+">"+ages[age].name+": <span class="+ages[age].id+">"+ages[age].totalEssence+"</span></li>").animate({scrollTop: $('#messageLog').prop("scrollHeight")}, 500);
+				}
+			}
+		}
+	}
+
 	if($("#Ages").has("#PassiveAgeList").length==1) {
     	$("#PassiveAgeList").each(function(v,f) {
-			for (age in Ages) {
-            	var currentAge = Ages[age];
+			for (age in ages) {
+            	var currentAge = ages[age];
     			if (currentAge.hasOwnProperty("id")) {
-					if(($(f).has("#"+currentAge.id).length==0)) {
-		    			$(f).append("<li class=ageButton onClick = resourceClick('Essence'),loadSelectedAge("+ currentAge.id +"); id="+currentAge.id+">"+currentAge.name+": <span class="+currentAge.id+">"+currentAge.totalEssence+"</span></li>");
+					if(($(f).has("#"+currentAge.id).length==0)&&($("#ActiveAgeList").has("#"+currentAge.id).length==0)) {
+		    			$(f).append("<li class=ageButton onClick = resourceClick('Essence'),loadSelectedAge("+ currentAge.id +"); id="+currentAge.id+">"+currentAge.name+": <span class="+currentAge.id+">"+currentAge.totalEssence+"</span></li>").animate({scrollTop: $('#messageLog').prop("scrollHeight")}, 500);
     				}
 				}
     		}
@@ -112,10 +122,16 @@ function updateAgeList() {
 };
 
 function updateAges() {
-    for(age in Ages) {
+    for(age in ages) {
         $("#PassiveAgeList li").each(function(v,f){
-            if(Ages[age].id==f.id) {
-                $("."+Ages[age].id).text(suffixfy(Ages[age].totalEssence,3));
+            if(ages[age].id==f.id) {
+                $("."+ages[age].id).text(suffixfy(ages[age].totalEssence,3));
+            }
+        })
+
+		$("#ActiveAgeList li").each(function(v,f){
+            if(ages[age].id==f.id) {
+                $("."+ages[age].id).text(suffixfy(ages[age].totalEssence,3));
             }
         })
     }

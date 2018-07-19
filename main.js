@@ -8,7 +8,7 @@ function resourceClick(resource){
     updateResourceTable(resource);
     addMessage("Adding " + Click + " " + resource);
     Resources[resource]["amount"] = Resources[resource]["amount"]+(Click);
-    Ages[0].totalEssence+=Click;
+    ages[0].totalEssence+=Click;
 	if(Resources[resource]["isScientific"]==false) {
 		$("."+ resource).text(suffixfy(Resources[resource]["amount"],3));
 		if(getSuffix(Resources[resource]["amount"],4)>19) {
