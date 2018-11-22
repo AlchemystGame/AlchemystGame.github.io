@@ -47,7 +47,10 @@ function loadSave() {
 	//ages = JSON.parse(saveAges);
 };
 
+
+//save when window is closed
 window.onbeforeunload = function(){save();};
+
 
 function updateIsDiscovered() {
 	for (var property in Resources) {
