@@ -1,6 +1,6 @@
 var white = 66;
 var totalTime = 0;
-loadSave();
+//loadSave();
 function update() {
 	$(".Philo").css({
 	"background": "-webkit-radial-gradient(white "+white+"%, rgba(8,232,222))",
@@ -25,12 +25,14 @@ function update() {
 		save();
 		addMessage("Auto-saving...");
 	}
+
 };
 
 //Save Functionality
 
 function save() {
 	var saveResources = JSON.stringify(Resources);
+	console.log(saveResources);
 	localStorage.setItem("saveResources", saveResources);
 
 	var saveAges = JSON.stringify(ages);
@@ -44,6 +46,8 @@ function loadSave() {
 	//var saveAges = localStorage.getItem("saveAges");
 	//ages = JSON.parse(saveAges);
 };
+
+window.onbeforeunload = function(){save();};
 
 function updateIsDiscovered() {
 	for (var property in Resources) {

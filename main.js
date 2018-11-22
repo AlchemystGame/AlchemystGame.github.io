@@ -90,7 +90,7 @@ var now;
 var deltaTime;
 var tickCount = 0;
 
-loadSave();
+//loadSave();
 function gameLoop() {
         now = Date.now();
         deltaTime = now - lastUpdate;

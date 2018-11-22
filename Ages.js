@@ -21,8 +21,9 @@ test2 = new Age("The Crucible of Ages", 1, 100000, .5, ["Increased Click",1], [1
 test3 = new Age("The Crucible of Ages", 3, 100000, .5, ["Increased Click",1], [1,2,3,4], "12347", false);
 test4 = new Age("The Crucible of Ages", 2, 100000, .5, ["Increased Click",1], [1,2,3,4], "12348", false);
 test5 = new Age("The Crucible of Ages", 5, 100000, .5, ["Increased Click",1], [1,2,3,4], "12349", false);
+test6 = new Age("The Lions Den", 5, 100000, .5, ["Increased Click",1], [1,2,3,4], "12350", false);
 activeAge = new Age("Sol", 1, 1000, 1, ["None", 0], ["None", 0], "1", true);
-ages = [activeAge,test,test2,test3,test4,test5];
+ages = [activeAge,test,test2,test3,test4,test5,test6];
 
 
 console.log(test.name)

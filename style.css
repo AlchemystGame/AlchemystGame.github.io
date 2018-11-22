@@ -14,6 +14,8 @@
              box-sizing: border-box;
    }
 
+
+
 html {
     color: #222;
     font-size: 1em;
@@ -127,6 +129,7 @@ body{
     color:#fff;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 a{
@@ -425,7 +428,7 @@ input:focus {
     border:2px solid #888;
     border-radius: 2;
     cursor:pointer;
-	padding: 10px;
+	padding: 5px;
 	font-family: Kings;
 	font-size:16px;
 	width: 120px;
