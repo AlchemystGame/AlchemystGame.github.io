@@ -13,17 +13,19 @@
 		<script type="text/javascript" src="Resources.js"></script>
         <script type="text/javascript" src="Ages.js"></script>
 		<script type="text/javascript" src="Log.js"></script>
+		<script type-"text/javascript" src="EssenceEXP.js"></script>
 		<script type="text/javascript" src="update.js"></script>
 		<script type="text/javascript" src="main.js"></script>
+
 
 
 	</head>
     <div id="wrapper">
 
 		<ul id="navbar">
-			<li><input type="button" class="utilButton" value="Main" onClick="unhide('Main')"/></li>
-			<li><input type="button" class="utilButton" value="Transmutation" onClick="unhide('Transmutation')"/></li>
 			<li><input type="button" class="utilButton" value="Ages" onClick="unhide('Ages'), loadAgeList()"/></li>
+			<li><input type="button" class="utilButton" value="Transmutation" onClick="unhide('Transmutation')"/></li>
+			<li><input type="button" class="utilButton" value="Main" onClick="unhide('Main')"/></li>
 			<li><input type="button" class="utilButton" value="Save" onClick="save()"/></li>
 			<li><input type="button" class="utilButton" value="LoadSave" onClick="loadSave()"/></li>
 		</ul>
@@ -38,6 +40,11 @@
                         <span class="Essence">0
                         </span>
                     </div>
+					<div id="myProgress">
+						<div id="myBar"></div>
+						<div id="expPercent"></div>
+					</div>
+
                 </span>
             </input>
 			<input type="button" value="180deg" class = "deg180"></input>
@@ -47,7 +54,7 @@
         <ul class="ResourceTable">
         </ul>
 
-        <div id="Main">
+        <div id="Main" class="hidden">
 
             <div id="GatherButtons">
                 <div><button onClick="resourceClick('Stone')"  class="StoneC resourceButton">Gather Stone <div>Stone: <span class="Stone">0</span></div></button></div>
@@ -59,7 +66,7 @@
 			<p id="p1" hidden> Hey not im hidden</p>
 		</div>
 
-		<div id="Ages" class="hidden">
+		<div id="Ages">
 			<div id = "ActiveAges">
 				Active Age
 				<ul id = "ActiveAgeList">

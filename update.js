@@ -10,7 +10,7 @@ function update() {
 	});
 	white = white-1;
 
-	Resources.Essence.amount+=Click*deltaTime/1000;
+	//Resources.Essence.amount+=Click*deltaTime/1000;
 	let AgeIncome = totalAgeIncome();
 
 	updateIsDiscovered();
@@ -18,6 +18,7 @@ function update() {
 	updateResourceTable();
 	updateAgeList();
 	updateAges();
+	checkEXP();
 
 	totalTime+=deltaTime;
 	if(totalTime>=60000*5) {

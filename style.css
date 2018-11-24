@@ -258,6 +258,7 @@ input:focus {
     -moz-border-radius: 20%;
 	text-align: center;
 	position: absolute;
+    width:180px;
 	margin-top: 0px;
 	margin-left: 0px;
     top: 10%;
@@ -265,7 +266,20 @@ input:focus {
     margin-left: -88px;
 	z-index: 90000;
     pointer-events:none;
+}
 
+#myProgress {
+    position: absolute;
+    width: 100%;
+    background-color: grey;
+    margin-top:100px;
+    font-size:12px;
+    color: white;
+}
+#myBar {
+    width: 1%;
+    height: 20px;
+    background-color: green;
 }
 
 #messageLog {
@@ -293,7 +307,7 @@ input:focus {
     background-color: rgba(124,124,124,.4);
     border: 2px solid #888;
     position: relative;
-    width: 300px;
+    width: calc(100% - 566px);
     height: calc(100% - 52.6px);
     margin-top: 5px;
 }
@@ -304,6 +318,8 @@ input:focus {
     margin-left: 10px;
     padding: 0;
     list-style: none;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
     overflow-y: scroll;
 }
 
@@ -322,7 +338,7 @@ input:focus {
     width: auto;
     height: 100px;
     position: relative;
-    border-bottom: 2px solid #987;
+    border-bottom: 2px solid #888;
     text-align: center;
     font-size:18px;
 }
@@ -360,11 +376,10 @@ input:focus {
     border-radius: 2;
     cursor:pointer;
 	padding: 10px;
-    margin: 5px;
+    margin: 2.5px;
 	font-family: Kings;
-	font-size:16px;
-	width: 0 auto;
-    display: table;
+	font-size:10px;
+	width: 80px;
 }
 
 .ageButton:hover {

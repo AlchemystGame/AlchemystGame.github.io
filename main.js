@@ -1,6 +1,6 @@
 
 var panes = ["Main", "Transmutation","Ages"];
-var Click = 100000;
+var Click = 100000000000000000000000000000000
 
 //Click to gather various resources, need to update
 
@@ -9,15 +9,14 @@ function resourceClick(resource){
     addMessage("Adding " + Click + " " + resource);
     Resources[resource]["amount"] = Resources[resource]["amount"]+(Click);
     ages[0].totalEssence+=Click;
-	if(Resources[resource]["isScientific"]==false) {
-		$("."+ resource).text(suffixfy(Resources[resource]["amount"],3));
-		if(getSuffix(Resources[resource]["amount"],4)>19) {
-			Resources[resource]["isScientific"]=true;
-		};
+	if(getSuffix(Resources[resource]["amount"],4)>19) {
+		$("."+ resource).text((Resources[resource]["amount"].toExponential(5)));
 	}
 	else {
-		$("."+ resource).text((Resources[resource]["amount"].toExponential(5)));
+
+        $("."+ resource).text(suffixfy(Resources[resource]["amount"],3));
 	};
+    EssenceEXP.T1.amount+=Click;
 };
 
 //Useless, need to remove
