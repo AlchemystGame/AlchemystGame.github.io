@@ -201,11 +201,11 @@ input:focus {
 .PhiloWrapper {
     top: 100%;
     left: 100%;
-    margin-top: -405px;
-    margin-left:-405px;
+    margin-top: -305px;
+    margin-left:-305px;
 	position: fixed;
-    width: 400px;
-    height: 400px;
+    width: 25vmin;
+    height:25vmin;
 }
 
 .PhiloWrapper input {
@@ -228,27 +228,14 @@ input:focus {
 	background: -o-radial-gradient(white 66%, rgba(8,232,222));
 	background: -moz-radial-gradient(white 66%, rgba(8,232,222));
 	background: radial-gradient(white 66%, rgba(8,232,222));
-	width: 400px !important;
-    height: 400px !important;
+	width: 300px !important;
+    height: 300px !important;
     top: 100%;
     left: 100%;
-    margin-left: -205px !important;
-    margin-top: -205px !important;
+    margin-left: -105px !important;
+    margin-top: -105px !important;
 	position: fixed;
 	border:4px solid red;
-}
-
-.deg180 {
-    transform: translate(-250px);
-    background: rgba(8,232,222);
-    border: 2px solid #06B9B1;
-}
-.deg90 {
-    transform: rotate(90deg) translate(-250px) rotate(-90deg);
-}
-
-.Philo:hover {
-	border:4px solid #FF7F7F;
 }
 
 .PhiloText {
@@ -268,6 +255,19 @@ input:focus {
     pointer-events:none;
 }
 
+.deg180 {
+    transform: translate(-250px);
+    background: rgba(8,232,222);
+    border: 2px solid #06B9B1;
+}
+.deg90 {
+    transform: rotate(90deg) translate(-250px) rotate(-90deg);
+}
+
+.Philo:hover {
+	border:4px solid #FF7F7F;
+}
+
 #myProgress {
     position: absolute;
     width: 100%;
@@ -283,7 +283,7 @@ input:focus {
 }
 
 #messageLog {
-    width: 550px;
+    width: 40vmax;
     height: 260px;
     padding: 20px;
     background-color: rgba(124,124,124,.4);
@@ -292,7 +292,7 @@ input:focus {
     list-style: none;
     left:100%;
     top:0%;
-    margin-left: -555px;
+    margin-left: -40vmax;
     margin-top: 5px;
     border: 2px solid #888;
 }
@@ -307,7 +307,7 @@ input:focus {
     background-color: rgba(124,124,124,.4);
     border: 2px solid #888;
     position: relative;
-    width: calc(100% - 566px);
+    width: calc(100% - 40vmax - 12px);
     height: calc(100% - 52.6px);
     margin-top: 5px;
 }
@@ -379,7 +379,7 @@ input:focus {
     margin: 2.5px;
 	font-family: Kings;
 	font-size:10px;
-	width: 80px;
+	width: calc(100% - 5px);
 }
 
 .ageButton:hover {
@@ -395,7 +395,7 @@ input:focus {
     padding: 0;
     position: fixed;
     top: 255px;
-    right: 425px;
+    right: calc(40vmax - 130px);
 }
 
 
