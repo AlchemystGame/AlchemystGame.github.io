@@ -284,7 +284,7 @@ input:focus {
 
 #messageLog {
     width: 40vmax;
-    height: 260px;
+    height: 40vmin;
     padding: 20px;
     background-color: rgba(124,124,124,.4);
     position: fixed;
@@ -319,7 +319,7 @@ input:focus {
     padding: 0;
     list-style: none;
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
     overflow-y: scroll;
 }
 
@@ -379,7 +379,7 @@ input:focus {
     margin: 2.5px;
 	font-family: Kings;
 	font-size:10px;
-	width: calc(100% - 5px);
+	width: 10vmax;
 }
 
 .ageButton:hover {
@@ -394,7 +394,7 @@ input:focus {
     width: 130px;
     padding: 0;
     position: fixed;
-    top: 255px;
+    top: calc(40vmin - 5px);
     right: calc(40vmax - 130px);
 }
 
